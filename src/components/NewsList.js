@@ -1,13 +1,11 @@
 import React from 'react'
-import NewsItem from './NewsItem';
+import NewsItem from './newsItem';
 
 function NewsList(props) {
-    const rendered = props.data.map((item) =>
-        <NewsItem title={item.title} text={item.content} author={item.author} urlToImage={item.urlToImage} />
-    )
     return (
         <div>
-            {rendered}
+            {props.data.map((item) =>
+                <NewsItem title={item.title} text={item.content} author={item.author} urlToImage={item.urlToImage} />)}
         </div>
     );
 }
